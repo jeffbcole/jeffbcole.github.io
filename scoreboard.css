@@ -41,7 +41,7 @@
 }
 
 #skunk_line_vertical {
-    background: url('Images/scoreboard_skunk_vertical.png');
+    background: url('images/scoreboard_skunk_vertical.png');
     width: 59px;
     height: 50px;
     position: absolute;
@@ -49,7 +49,7 @@
 }
 
 #skunk_line_horizontal {
-    background: url('Images/scoreboard_skunk_horizontal.png');
+    background: url('images/scoreboard_skunk_horizontal.png');
     width: 91px;
     height: 13px;
     position: absolute;

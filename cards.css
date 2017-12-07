@@ -20,6 +20,7 @@
     background-size: cover;
     border-radius: 8px;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     transform: rotateY(0deg); 
     transition: 0.6s;
     overflow: visible;
@@ -32,6 +33,7 @@
     background-size: cover;
     border-radius: 8px;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     transform: rotateY(180deg);
     transition: 0.6s;
     overflow: visible;

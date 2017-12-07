@@ -1013,8 +1013,8 @@ var Game = function () {
 
         // Game properties
         skillLevel = difficulty;
-        playerScore = 110;
-        computerScore = 110;
+        playerScore = 0;
+        computerScore = 0;
         isPlayersCrib = false;
         playersHand = [];
         computersHand = [];

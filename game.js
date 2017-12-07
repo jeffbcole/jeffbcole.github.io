@@ -360,21 +360,24 @@ var Game = function () {
         cardBack.style.transition = ease;
         cardFront.style.transition = ease;
         raiseContainer.style.transition = ease;
-
+        raiseContainer.style.transform = "scale(1.15)";
+        
         if (isIE) {
             cardFront.style.transform = "translate3d(0px,0px,1px) perspective(500px) rotateY(0deg)";
             cardBack.style.transform = "translate3d(0px,0px,1px) perspective(500px) rotateY(-180deg)";
             cardShadow.style.transform = "translate3d(20px,20px,0px) perspective(500px) rotateY(0deg)";
+            setTimeout(function () {
+                raiseContainer.style.transform = "scale(1)";
+                cardShadow.style.transform = "translate3d(0px,0px,0px) perspective(500px) rotateY(0deg)";
+            }, 400);
         } else {
             flipContainer.style.transform = "perspective(500px) rotateY(180deg)";
             cardShadow.style.transform = "translate3d(-20px,20px,0px)";
+            setTimeout(function () {
+                raiseContainer.style.transform = "scale(1)";
+                cardShadow.style.transform = "translate3d(0px,0px,0px)";
+            }, 400);
         }
-        
-        raiseContainer.style.transform = "scale(1.15)";
-        setTimeout(function () {
-            raiseContainer.style.transform = "scale(1)";
-            cardShadow.style.transform = "translate3d(0px,0px,0px)";
-        }, 400);
     }
 
     function flipDownCard(cardView) {
@@ -453,7 +456,7 @@ var Game = function () {
         raiseContainer.style.transform = "scale(1.15)";
         cardShadow.style.transition = ease;
         if (isIE) {
-            cardShadow.style.transform = "translate3d(20px,20px,0px)";
+            cardShadow.style.transform = "translate3d(20px,20px,0px) perspective(500px) rotateY(0deg)";
         } else {
             cardShadow.style.transform = "translate3d(-20px,20px,0px)";
         }
@@ -469,7 +472,11 @@ var Game = function () {
         raiseContainer.style.transition = ease;
         raiseContainer.style.transform = "scale(1)";
         cardShadow.style.transition = ease;
-        cardShadow.style.transform = "translate3d(0px,0px,0px)"
+        if (isIE) {
+            cardShadow.style.transform = "translate3d(0px,0px,0px) perspective(500px) rotateY(0deg)";
+        } else {
+            cardShadow.style.transform = "translate3d(0px,0px,0px)";
+        }
     }
 
     function slideUpCard(cardView) {

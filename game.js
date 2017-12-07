@@ -282,6 +282,40 @@ var Game = function () {
         document.onmousemove = null;
     }
 
+    /**
+    * detect IE
+    * returns version of IE or false, if browser is not Internet Explorer
+    */
+    function detectIE() {
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf('MSIE ');
+        if (msie > 0) {
+            // IE 10 or older => return version number
+            //return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+            return true;
+        }
+    
+        var trident = ua.indexOf('Trident/');
+        if (trident > 0) {
+            // IE 11 => return version number
+            var rv = ua.indexOf('rv:');
+            //return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+            return true;
+        }
+    
+        var edge = ua.indexOf('Edge/');
+        if (edge > 0) {
+            // Edge (IE 12+) => return version number
+            //return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+            return true;
+        }
+    
+        // other browser
+        return false;
+    }
+
+    var isIE = detectIE();
+    
     function slideRaiseAndFlipUpCard(cardView) {
         var raiseContainer = cardView.firstChild;
         var flipContainer = raiseContainer.firstChild;
@@ -296,14 +330,21 @@ var Game = function () {
         }, 250);
         setTimeout(function () {
             var ease = "0.7s ease-out";
+            raiseContainer.style.transition = ease;
             flipContainer.style.transition = ease;
             cardBack.style.transition = ease;
             cardFront.style.transition = ease;
-            raiseContainer.style.transition = ease;
-            flipContainer.style.transform = "perspective(500px) rotateY(180deg)";
-            raiseContainer.style.transform = "scale(1.15)";
             cardShadow.style.transition = ease;
-            cardShadow.style.transform = "translate3d(-20px,20px,0px)";
+            raiseContainer.style.transform = "scale(1.15)";
+            
+            if (isIE) {
+                cardFront.style.transform = "translate3d(0px,0px,1px) perspective(500px) rotateY(0deg)";
+                cardBack.style.transform = "translate3d(0px,0px,-1px) perspective(500px) rotateY(-180deg)";
+                cardShadow.style.transform = "translate3d(20px,20px,0px) perspective(500px) rotateY(0deg)";
+            } else {
+                flipContainer.style.transform = "perspective(500px) rotateY(180deg)";
+                cardShadow.style.transform = "translate3d(-20px,20px,0px)";
+            }
         }, 310);
     }
 
@@ -319,9 +360,17 @@ var Game = function () {
         cardBack.style.transition = ease;
         cardFront.style.transition = ease;
         raiseContainer.style.transition = ease;
-        flipContainer.style.transform = "perspective(500px) rotateY(180deg)";
+
+        if (isIE) {
+            cardFront.style.transform = "translate3d(0px,0px,1px) perspective(500px) rotateY(0deg)";
+            cardBack.style.transform = "translate3d(0px,0px,1px) perspective(500px) rotateY(-180deg)";
+            cardShadow.style.transform = "translate3d(20px,20px,0px) perspective(500px) rotateY(0deg)";
+        } else {
+            flipContainer.style.transform = "perspective(500px) rotateY(180deg)";
+            cardShadow.style.transform = "translate3d(-20px,20px,0px)";
+        }
+        
         raiseContainer.style.transform = "scale(1.15)";
-        cardShadow.style.transform = "translate3d(-20px,20px,0px)";
         setTimeout(function () {
             raiseContainer.style.transform = "scale(1)";
             cardShadow.style.transform = "translate3d(0px,0px,0px)";
@@ -340,13 +389,25 @@ var Game = function () {
         cardBack.style.transition = ease;
         cardFront.style.transition = ease;
         raiseContainer.style.transition = ease;
-        flipContainer.style.transform = "perspective(500px) rotateY(0deg)";
         raiseContainer.style.transform = "scale(1.15)";
-        cardShadow.style.transform = "translate3d(-20px,20px,0px)";
-        setTimeout(function () {
-            raiseContainer.style.transform = "scale(1)";
-            cardShadow.style.transform = "translate3d(0px,0px,0px)";
-        }, 400);
+        
+        if (isIE) {
+            cardFront.style.transform = "translate3d(0px,0px,1px) perspective(500px) rotateY(180deg)";
+            cardBack.style.transform = "translate3d(0px,0px,1px) perspective(500px) rotateY(0deg)";
+            cardShadow.style.transform = "translate3d(20px,20px,0px) perspective(500px) rotateY(180deg)";
+            setTimeout(function () {
+                raiseContainer.style.transform = "scale(1)";
+                cardShadow.style.transform = "translate3d(0px,0px,0px) perspective(500px) rotateY(180deg)";
+            }, 400);
+        } else {
+            flipContainer.style.transform = "perspective(500px) rotateY(0deg)";
+            cardShadow.style.transform = "translate3d(-20px,20px,0px)";
+            setTimeout(function () {
+                raiseContainer.style.transform = "scale(1)";
+                cardShadow.style.transform = "translate3d(0px,0px,0px)";
+            }, 400);
+        }
+        
     }
 
     function flipDownAndLowerCard(cardView, lowerDelay) {
@@ -361,11 +422,24 @@ var Game = function () {
         cardBack.style.transition = ease;
         cardFront.style.transition = ease;
         raiseContainer.style.transition = ease;
-        flipContainer.style.transform = "perspective(500px) rotateY(0deg)";
-        setTimeout(function () {
-            raiseContainer.style.transform = "scale(1)";
-            cardShadow.style.transform = "translate3d(0px,0px,0px)";
-        }, lowerDelay);
+
+        if (isIE) {
+            cardFront.style.transform = "translate3d(0px,0px,1px) perspective(500px) rotateY(180deg)";
+            cardBack.style.transform = "translate3d(0px,0px,1px) perspective(500px) rotateY(0deg)";
+            cardShadow.style.transform = "translate3d(0px,0px,0px) perspective(500px) rotateY(180deg)";
+            setTimeout(function () {
+                raiseContainer.style.transform = "scale(1)";
+                cardShadow.style.transform = "translate3d(0px,0px,0px) perspective(500px) rotateY(180deg)";
+            }, lowerDelay);
+        } else {
+            flipContainer.style.transform = "perspective(500px) rotateY(0deg)";    
+            setTimeout(function () {
+                raiseContainer.style.transform = "scale(1)";
+                cardShadow.style.transform = "translate3d(0px,0px,0px)";
+            }, lowerDelay);
+        }
+
+        
     }
 
     function raiseCard(cardView) {
@@ -378,7 +452,11 @@ var Game = function () {
         raiseContainer.style.transition = ease;
         raiseContainer.style.transform = "scale(1.15)";
         cardShadow.style.transition = ease;
-        cardShadow.style.transform = "translate3d(-20px,20px,0px)"
+        if (isIE) {
+            cardShadow.style.transform = "translate3d(20px,20px,0px)";
+        } else {
+            cardShadow.style.transform = "translate3d(-20px,20px,0px)";
+        }
     }
 
     function lowerCard(cardView) {

@@ -21,7 +21,7 @@
     border-radius: 8px;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transform: rotateY(0deg); 
+    transform: translate3d(0px,0px,1px) rotateY(0deg); 
     transition: 0.6s;
     overflow: visible;
     pointer-events: none;
@@ -34,7 +34,7 @@
     border-radius: 8px;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transform: rotateY(180deg);
+    transform: translate3d(0px,0px,-1px) rotateY(180deg);
     transition: 0.6s;
     overflow: visible;
     pointer-events: none;
@@ -44,6 +44,7 @@
     position: absolute;
     border-radius: 9px;
     pointer-events: none;
+    transform: translate3d(0px,0px,0px); 
     background: rgba(0,0,0,0.5);
 }
 

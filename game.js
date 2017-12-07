@@ -303,7 +303,7 @@ var Game = function () {
             flipContainer.style.transform = "perspective(500px) rotateY(180deg)";
             raiseContainer.style.transform = "scale(1.15)";
             cardShadow.style.transition = ease;
-            cardShadow.style.transform = "translate(-20px,20px)";
+            cardShadow.style.transform = "translate3d(-20px,20px,0px)";
         }, 310);
     }
 
@@ -321,10 +321,10 @@ var Game = function () {
         raiseContainer.style.transition = ease;
         flipContainer.style.transform = "perspective(500px) rotateY(180deg)";
         raiseContainer.style.transform = "scale(1.15)";
-        cardShadow.style.transform = "translate(-20px,20px)";
+        cardShadow.style.transform = "translate3d(-20px,20px,0px)";
         setTimeout(function () {
             raiseContainer.style.transform = "scale(1)";
-            cardShadow.style.transform = "translate(0px,0px)";
+            cardShadow.style.transform = "translate3d(0px,0px,0px)";
         }, 400);
     }
 
@@ -342,10 +342,10 @@ var Game = function () {
         raiseContainer.style.transition = ease;
         flipContainer.style.transform = "perspective(500px) rotateY(0deg)";
         raiseContainer.style.transform = "scale(1.15)";
-        cardShadow.style.transform = "translate(-20px,20px)";
+        cardShadow.style.transform = "translate3d(-20px,20px,0px)";
         setTimeout(function () {
             raiseContainer.style.transform = "scale(1)";
-            cardShadow.style.transform = "translate(0px,0px)";
+            cardShadow.style.transform = "translate3d(0px,0px,0px)";
         }, 400);
     }
 
@@ -364,7 +364,7 @@ var Game = function () {
         flipContainer.style.transform = "perspective(500px) rotateY(0deg)";
         setTimeout(function () {
             raiseContainer.style.transform = "scale(1)";
-            cardShadow.style.transform = "translate(0px,0px)";
+            cardShadow.style.transform = "translate3d(0px,0px,0px)";
         }, lowerDelay);
     }
 
@@ -378,7 +378,7 @@ var Game = function () {
         raiseContainer.style.transition = ease;
         raiseContainer.style.transform = "scale(1.15)";
         cardShadow.style.transition = ease;
-        cardShadow.style.transform = "translate(-20px,20px)"
+        cardShadow.style.transform = "translate3d(-20px,20px,0px)"
     }
 
     function lowerCard(cardView) {
@@ -391,7 +391,7 @@ var Game = function () {
         raiseContainer.style.transition = ease;
         raiseContainer.style.transform = "scale(1)";
         cardShadow.style.transition = ease;
-        cardShadow.style.transform = "translate(0px,0px)"
+        cardShadow.style.transform = "translate3d(0px,0px,0px)"
     }
 
     function slideUpCard(cardView) {

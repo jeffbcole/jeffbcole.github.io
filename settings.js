@@ -61,14 +61,17 @@ function redirectToAppStore() {
 	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
   
 	if (/windows phone/i.test(userAgent)) {
+		window.location.replace("https://www.microsoft.com/en-us/store/p/cribbage-classic/9wzdncrfjhg7");
 		return true;
 	}
   
 	if (/android/i.test(userAgent)) {
+		window.location.replace("https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwiK16z69vrXAhUEz2MKHQTPBHAQFggwMAE&url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.gamesbypost.cribbageclassic%26hl%3Den&usg=AOvVaw0PiEE9Anr8UoUvzp2L47vp");
 		return true;
 	}
   
 	if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+		window.location.replace("https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&cad=rja&uact=8&ved=0ahUKEwiK16z69vrXAhUEz2MKHQTPBHAQFgg9MAM&url=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fcribbage-classic%2Fid901900997%3Fmt%3D8&usg=AOvVaw17oi1oNyltt6JXntrfOCaO");
 		return true;
 	}
   

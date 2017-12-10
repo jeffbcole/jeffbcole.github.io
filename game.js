@@ -1393,13 +1393,14 @@ var Game = function () {
         playersHand.sort(function (a, b) { return a.rank - b.rank; });
 
         // Deal the player cards
+        mostRecentHandCards = [];
+        mostRecentIsPlayersCrib = isPlayersCrib;
         for (var i = 0; i < 6; i++) {
             var cardView = playersHand[i].cardView;
             cardView.style.zIndex = i + 100;
             mostRecentHandCards.push(playersHand[i]);
         }
-        mostRecentIsPlayersCrib = isPlayersCrib;
-
+        
         setTimeout(function () {
             for (var i = 0; i < 6; i++) {
                 var cardView = playersHand[i].cardView;

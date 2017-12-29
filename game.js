@@ -3645,6 +3645,7 @@ var Game = function () {
                     var subOptimalView = document.getElementById('GameOverSuboptimalDiscardTemplate').cloneNode(true);
                     subOptimalView.style.display = "block";
                     subOptimalView.suboptimalPlay = suboptimalPlays[i];
+                    subOptimalView.children[0].innerHTML = suboptimalPlays[i].isPlayersCrib ? "Hand dealt - Your crib" : "Hand dealt - Opp. crib";
                     suboptimalPlays[i].situationCards.sort(function (a, b) { return a.rank - b.rank; });
                     for (var j = 0; j < 6; j++) {
                         var elem = subOptimalView.children[j + 1];

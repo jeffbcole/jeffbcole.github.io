@@ -3554,7 +3554,7 @@ var Game = function () {
             if (isSkunkGame()) {
                 setting = 'stat_skunks_' + skillLevel;
                 settingsVal = GetStatistic(setting);
-                SetStatistic(setting, skunksVal + 1);
+                SetStatistic(setting, settingsVal + 1);
             }
         } else {
             var setting = 'stat_losses_' + skillLevel;

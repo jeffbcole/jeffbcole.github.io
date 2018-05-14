@@ -3586,7 +3586,7 @@ var Game = function () {
         closeButton.style.pointerEvents = 'none';
 
         document.getElementById('GameOverResultText').innerHTML = isPlayerWon() ? "You won!" : "You lost";
-        document.getElementById('GameOverSkunkText').style.display = isSkunkGame() ? "auto" : "none";
+        document.getElementById('GameOverSkunkText').style.display = isSkunkGame() ? "block" : "none";
 
         document.getElementById('GameOverTotalScoreYou').innerText = playerScore;
         document.getElementById('GameOverTotalScoreOpp').innerText = computerScore;

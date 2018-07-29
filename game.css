@@ -910,3 +910,29 @@
     top: 0px;
     right: 0px;
 }
+
+#try_hearts_promo_link {
+    position: absolute;
+    top: 100%;
+    transform: translate(0%,-100%);
+    left: 0%;
+    width: 260px;
+    text-align: center;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+
+#hearts_link {
+    font-size: 22px;
+}
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}

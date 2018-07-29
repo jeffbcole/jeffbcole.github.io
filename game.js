@@ -1727,7 +1727,7 @@ var Game = function () {
             suboptimalWarningText.innerHTML = "Your discards will result in an average round score of " + parseFloat(suboptimalPlay.playedScore).toFixed(1) + "<br><br>A better play exists that would result in an average score of " + parseFloat(suboptimalPlay.optimalScore).toFixed(1);
         } else {
             suboptimalShowAllButton.style.display = 'none';
-            suboptimalPlayAnywaysButton.innerText = "Play this card anyways";
+            suboptimalPlayAnywaysButton.innerText = "Play this card anyway";
             suboptimalWarningTitle.innerHTML = "That is not the<br>optimal play";
             suboptimalWarningText.innerHTML = "Your card will result in a score of " + suboptimalPlay.playedScore + "<br><br>A better play exists that would result in a score of " + suboptimalPlay.optimalScore;
         }

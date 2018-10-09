@@ -2910,7 +2910,7 @@ var Game = function () {
         SetStatistic(setting, settingVal + 1);
         setting = 'stat_hands_points_' + skillLevel;
         settingVal = GetStatistic(setting);
-        SetStatistic(setting, settingVal + playerHandPointsTotal);
+        SetStatistic(setting, settingVal + recordHandScore);
 
         var delay = RegisterAndAnimateHandScores(scoringPoints, true, false, topCard);
         setTimeout(function () {

@@ -219,6 +219,10 @@
 		</div>
 	</div>
 
+	<button id="get_more_games_button" onclick="PlayMoreGamesButtonPressed()">
+		Play More<br>Card Classics
+	</button>
+
 	<div id="adView" align="center">
 			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<ins class="adsbygoogle"
@@ -1245,8 +1249,32 @@
 		<div id="mhaMaxLabel">Maximum<br>points</div>
 	</div>
 	
-	<div id="try_hearts_promo_link">Want more?  Try our newest game:<br><a id="hearts_link" href="http://www.heartscardclassic.com">Hearts Card Classic</a></div>
-	
+	<div id="play_more_games_menu">
+		<div id="play_more_games_title">Play More<br>Card Classics</div>
+		<button id="play_more_games_close_button" class="close_button" onclick="play_more_games_close_click()">X</button>
+		<a class="more_games_icon_button" href="http://www.heartscardclassic.com" style="margin-top: 50pt">
+			<span style="display: block; width:100%; height:100%">
+				<div id="more_games_icon_hearts"></div>
+				<div class="more_games_icon_title">
+					<center>
+						<div class="more_games_icon_title1">HEARTS</div>
+						<div class="more_games_icon_title2">CARD CLASSIC</div>
+					</center>
+				</div>
+			</span>
+		</a>
+		<a class="more_games_icon_button" href="http://www.spadescardclassic.com">
+			<span style="display: block; width:100%; height:100%">
+				<div id="more_games_icon_spades"></div>
+				<div class="more_games_icon_title">
+					<center>
+						<div class="more_games_icon_title1">SPADES</div>
+						<div class="more_games_icon_title2">CARD CLASSIC</div>
+					</center>
+				</div>
+			</span>
+		</a>
+	</div>
 </body>
 
 </html>

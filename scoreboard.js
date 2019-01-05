@@ -13,7 +13,7 @@ var Scoreboard = function () {
     var horizontalPegGroupHolePositionOffsetsBlue = [ [21, -12], [37, -12], [53, -12], [69, -12], [85, -12]];
     var horizontalPegGroupHolePositionOffsetsRed = [ [21, 5], [37, 5], [53, 5], [69, 5], [85, 5]];
     
-    var rightTurnPegGroupHolePositionOffsetsBlue = [ [122, 8], [103, 10], [84, 17], [72, 38], [71, 55] ];
+    var rightTurnPegGroupHolePositionOffsetsBlue = [ [122, -14], [104, -12], [83, -4], [73, 16], [71, 32] ];
     var rightTurnPegGroupHolePositionOffsetsRed = [ [122, 5], [108, 5], [95, 8], [88, 20], [87, 35] ];
 
     var verticalRightPegGroupHolePositionOffsetsBlue = [ [71, -11], [71, 5], [71, 21], [71, 37], [71, 52]];

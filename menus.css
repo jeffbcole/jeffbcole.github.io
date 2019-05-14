@@ -1045,9 +1045,9 @@ input:checked + .slider:before {
 	background:black;
 	color:white;
 	width:180pt;
-	height:200pt;
+	height:260pt;
 	left: 15pt;
-	bottom: -200pt;
+	bottom: -260pt;
 	box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
 	z-index: 1000;
 	opacity:0;
@@ -1111,7 +1111,7 @@ input:checked + .slider:before {
 
 #more_games_icon_hearts {
 	position: absolute;
-	background-image: url('images/app_icon_hearts.png'); /* TODO: better icon */
+	background-image: url('images/app_icon_hearts.png');
 	background-size: cover;
 	width: 50pt;
 	height: 40pt;
@@ -1121,10 +1121,20 @@ input:checked + .slider:before {
 
 #more_games_icon_spades {
 	position: absolute;
-	background-image: url('images/app_icon_spades.png'); /* TODO: better icon */
+	background-image: url('images/app_icon_spades.png');
 	background-size: cover;
-	width: 40pt;
+	width: 45pt;
 	height: 40pt;
 	top: 5pt;
-	left: 12pt;
+	left: 10pt;
+}
+
+#more_games_icon_pinochle {
+	position: absolute;
+	background-image: url('images/app_icon_pinochle.png');
+	background-size: cover;
+	width: 55pt;
+	height: 40pt;
+	top: 5pt;
+	left: 5pt;
 }

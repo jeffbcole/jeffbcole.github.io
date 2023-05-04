@@ -1044,10 +1044,10 @@ input:checked + .slider:before {
 	border-radius:15px;
 	background:black;
 	color:white;
-	width:180pt;
-	height:260pt;
-	left: 15pt;
-	bottom: -260pt;
+	width:234px;
+	height:420px;
+	left: 15px;
+	bottom: -420px;
 	box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
 	z-index: 1000;
 	opacity:0;
@@ -1109,32 +1109,42 @@ input:checked + .slider:before {
 	line-height: 8pt; 
 }
 
+#more_games_icon_solitaire {
+	position: absolute;
+	background-image: url('images/app_icon_solitaire.png');
+	background-size: cover;
+	width: 60px;
+	height: 56px;
+	top: 6px;
+	left: 12px;
+}
+
 #more_games_icon_hearts {
 	position: absolute;
 	background-image: url('images/app_icon_hearts.png');
 	background-size: cover;
-	width: 50pt;
-	height: 40pt;
-	top: 5pt;
-	left: 7pt;
+	width: 70px;
+	height: 56px;
+	top: 6px;
+	left: 10px;
 }
 
 #more_games_icon_spades {
 	position: absolute;
 	background-image: url('images/app_icon_spades.png');
 	background-size: cover;
-	width: 45pt;
-	height: 40pt;
-	top: 5pt;
-	left: 10pt;
+	width: 70px;
+	height: 60px;
+	top: 2px;
+	left: 3px;
 }
 
 #more_games_icon_pinochle {
 	position: absolute;
 	background-image: url('images/app_icon_pinochle.png');
 	background-size: cover;
-	width: 55pt;
-	height: 40pt;
-	top: 5pt;
-	left: 5pt;
+	width: 70px;
+	height: 51px;
+	top: 8px;
+	left: 10px;
 }
